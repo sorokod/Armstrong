@@ -1,7 +1,7 @@
 ## Armstrong number calculator
 
-Briefly, an [Armstrong numbers](https://en.wikipedia.org/wiki/Narcissistic_number) number *"is a 
-number that is the sum of its own digits each raised to the power of the number of digits"*.
+Briefly, an [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) *"is a number that 
+is the sum of its own digits each raised to the power of the number of digits"*.
 
 For example `8208` is an Armstrong number because `8208 = 8^4 + 2^4 + 0^4 + 8^4`. We will say that 
 `8208` is a **level-4** A-number and call the power sum of its digits, an **aSum**. Single digit 
