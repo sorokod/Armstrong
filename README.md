@@ -28,7 +28,7 @@ The code calculates all A-numbers up to level-39 with the following timings:
   Level-39 3518 sec. (58 min) 88 numbers
 
 * On i7-4790K CPU @ 4.00GHz
-* Run as:  java -Xmx5g -Xms5g -cp target/armstrong-1.0-SNAPSHOT.jar armstrong.Runner 39 
+* Run as:  java -Xmx5g -Xms5g -cp target/armstrong-1.0-SNAPSHOT.jar armstrong.Runner <LEVEL> 
 ```
 
 #### Optimization
