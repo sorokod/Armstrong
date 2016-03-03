@@ -1,4 +1,4 @@
-## Armstrong number calculator
+## Armstrong all number calculator
 
 Briefly, an [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) *"is a number that 
 is the sum of its own digits each raised to the power of the number of digits"*.
@@ -15,7 +15,7 @@ There is a finite number of A-numbers, this is because the magnitude of a number
 it's `aSum` so that after certain point, the `aSum` falls behind its number. The largest A-number is 
 a level-39ner
 
-The code calculates all A-numbers up to level-39 with the following timings:
+The code calculates **all** A-numbers up to level-39 with the following timings:
 
 ```
   Level-15 0  sec.   41 numbers
