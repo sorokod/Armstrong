@@ -1,5 +1,10 @@
 ## All Armstrong numbers calculator
 
+**Sources:** This repo contains a Java implementation, a Kotlin implementation is here: https://github.com/sorokod/All-Armstong-numbers 
+
+---
+
+
 Briefly, an [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) *"is a number that 
 is the sum of its own digits each raised to the power of the number of digits"*.
 
