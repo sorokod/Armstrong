@@ -4,8 +4,9 @@ Briefly, an [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number
 is the sum of its own digits each raised to the power of the number of digits"*.
 
 For example `8208` is an Armstrong number because `8208 = 8^4 + 2^4 + 0^4 + 8^4`. We will say that 
-`8208` is a **level-4** A-number and call the power sum of its digits, an **aSum**. Single digit 
-numbers are obviously (level-1) Armstrong numbers , all the A-numbers up to level 4 are:
+`8208` is a **level-4** A-number and call the power sum of its digits, an `aSum`. In other words, N is an Armstrong number
+if `aSum(N) = N`.
+Single digit numbers are obviously (level-1) Armstrong numbers , all the A-numbers up to level 4 are:
 ```
     1 2 3 4 5 6 7 8 9 
     153 370 371 407 
@@ -41,12 +42,13 @@ depend on the order of the digits. In other words, all numbers comprised of the 
 will have the same `aSum`. For any **representative** N from the set of numbers comprised of digits 
 {0,2,8,8}, N is A-number if and only if `aSum(N) = aSum(aSum(N))`. Therefore, generally, we don't need to 
 examine all numbers up to a given `level` but only one representative from every multiset of digits. 
-This reduces the search space from `10^39` to about `10^10`.
+This reduces the search space from `10^39` to about `10^10`. Here is a more formal description **[1]**.
 
 2. It doesn't really matter which representative we pick, the one with digits in descending order is
 reasonably easy to work with, e.g. the representative of `{0,2,8,8}` is `8820`. Instead of filtering
 all `10^39` values for representatives, the code builds and discards the representatives dynamically 
-so that only relevant values are examined with modest memory requirement ( [a bit more about that tree](TREE.md) ).
+so that only relevant values need to be examined with modest memory requirement ( in fact we need to examine less 
+than `10^9` values, [more details here](TREE.md) ).
 
 3. Obviously the problem can be broken down into parts that can be executed in parallel.
 
@@ -57,5 +59,14 @@ so that only relevant values are examined with modest memory requirement ( [a bi
 Instead of checking that `aSum(N) = aSum(aSum(N))` it is cheaper to verify that `aSum(N)` is a permutation 
 of the digits of `N` which saves us an extra call to `aSum`. 
 
+---
 
+[1] For any integer `N` , `A(N)` will be the multiset of its digits, e.g: `A(9474) = {9,7,4,4}`. Any integer that
+is composed of digits in `A(N)` is a `representative` of `A(N)`. 
+
+
+__Lemma__: If `aSum(N)` is a `representative` of `A(N)` then `aSum(aSum(N))` is an Armstrong number.
+
+__Proof__: By the definition of `aSum()`, for any `K` and `M` `representatives` , `aSum(K) = aSum(M)`. Since we assume 
+that `aSum(N)` itself is a `representative` we have that `aSum(aSum(N))` is an Armstrong number.
 
